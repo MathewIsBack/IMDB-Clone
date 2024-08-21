@@ -1,17 +1,14 @@
 import React from 'react'
+import Card from './Card'
 
 export default function Results({ results }) {
   return (
-    <div>
+    <div className='sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-6xl mx-auto py-4 w-full'>
         {
             results.map((item) => (
-                <div key={item.id}>
-                    <h2>
-                    {item.title || item.name || 'Title not available'}
-                    </h2>
-                </div>
+                <Card key={item.id} result={item} />
             ))
         }
-    </div>
+    </div> 
   )
 }
