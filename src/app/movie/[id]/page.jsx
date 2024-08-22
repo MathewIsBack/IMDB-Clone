@@ -12,13 +12,18 @@ export default async function MoviePage({params}) {
             <Image src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path || movie.poster_path}`} width={500} height={300} className="rounded-lg">
 
             </Image>
-            <div className="">
-                <h2>
+            <div className="p-2">
+                <h2 className="text-lg mb-3 font-bold">
                 {movie.title || movie.name}
                 </h2>
-                <p>{movie.overview}</p>
-                <p>{movie.release_date || movie.first_air_date}</p>
-                <p>{movie.vote_count}</p>
+                <p className="text-lg mb-3">{movie.overview}</p>
+                <p className="mb-3">
+                  <span className="font-semibold mr-1">Date Released:</span>
+                  {movie.release_date || movie.first_air_date}</p>
+                <p>
+                <span className="font-semibold mr-1">Date Released:</span>
+                  {movie.vote_count}
+                  </p>
             </div>
         </div>
     </div>
